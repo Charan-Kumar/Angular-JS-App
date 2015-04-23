@@ -1,0 +1,21 @@
+<div ng-controller='CustomersController'>
+    <h1>Customers</h1>
+    <p>Filter:</p><input type='text' ng-model='customerFilter.name'/><br><br>
+    <table class='table table-striped'>
+        <tr>
+            <th ng-click="doSort('name')">Name</th>
+            <th ng-click="doSort('city')">City</th>
+            <th ng-click="doSort('joined')">Joined</th>
+            <th ng-click="doSort('order')">Order Amount</th>
+            <th></th>
+        </tr>
+        <tr ng-repeat='customer in customers | filter:customerFilter | orderBy:sortBy:reverse' class="at-repeat-wave-in at-repeat-wave-out">
+            <td>{{customer.name}}</td>
+            <td>{{customer.city}}</td>
+            <td>{{customer.joined | date:'longDate'}}</td>
+            <td>{{customer.order | currency}}</td>
+            <td><a href = "#orders/{{customer.id}}">View Orders</a></td>
+        </tr>
+    </table>
+    <p>Total Customers = {{customers.length}}</p>
+</div>

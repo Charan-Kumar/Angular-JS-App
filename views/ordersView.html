@@ -1,0 +1,16 @@
+<div ng-controller='OrdersController' ng-init="'sum=0'">
+    <h1>{{customer.name}}'s Orders</h1>
+    <table class='table table-striped'>
+        <tr>
+            <th>ID</th>
+            <th>Product</th>
+            <th>Price</th>
+        </tr>
+        <tr ng-repeat='order in customer.orders' class="at-repeat-wave-in at-repeat-wave-out">
+            <td>{{order.id}}</td>
+            <td>{{order.product}}</td>
+            <td>{{order.price | currency}}</td>
+        </tr>        
+    </table>
+    <p>Total Orders : {{ customer.order | currency }}</p>
+</div>

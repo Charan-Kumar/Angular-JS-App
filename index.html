@@ -1,0 +1,29 @@
+<!doctype html>
+<html ng-app ='LearningApp'>
+    <head>
+        <title>Angular JS</title>
+        
+        <!-- Latest compiled and minified CSS -->
+        <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css'>
+        <link rel='stylesheet' href='animation.css'>
+    </head>
+    <body>
+        <header>
+        <nav class="navbar navbar-default">
+            <ul class="navbar-nav nav">
+                <li><a href="#/customers">Customers</a></li>
+                <li><a href="#/orders">Orders</a></li>
+                <li><a href="#/products">Products</a></li>
+            </ul>
+        </nav>
+        </header>
+        <div ng-view class='container at-view-scale-in at-view-fade-out'>
+        
+        </div>
+        
+        <script src='angular.js'></script>
+        <script src="angular-route.js"></script>
+        <script src='app.js'></script>
+        <script src="angular-animate.js"></script>
+    </body>    
+</html>
